@@ -1,0 +1,42 @@
+IT22213358 | JAYAWARDHANE K. G. M. S.
+
+Prepared synthetic dataset for waste prediction
+Developed waste prediction machine learning model using Linear Regression
+Trained and tested model using synthetic data
+Implemented wet and dry waste forecasting functionality
+Developed dashboard frontend for prediction system
+Integrated prediction results into frontend dashboard
+Displayed waste analytics and prediction data visually
+
+IT22088482 | Wijesiri  a. m
+Developed Smart Waste Pickup Coordination module
+Developed Flutter frontend for residents and drivers
+Integrated Firebase Authentication and Firestore
+Implemented real-time pickup request system
+Developed live driver tracking functionality
+Integrated OpenStreetMap and routing system
+Implemented nearest-neighbor route optimization
+Developed bin priority status system (Red, Yellow, Green)
+Implemented geofencing and arrival notifications
+Tested real-time communication between users and drivers
+Configured ngrok HTTPS tunneling for mobile testing
+
+IT22548528 | Hemsara K.D.S
+Integrated MQ135, MQ4, and DHT22 sensors with ESP32
+Developed real-time environmental sensing system
+Configured WiFi communication for sensor data transmission
+Sent sensor readings to Firebase Realtime Database
+Structured sensor data in JSON format
+Integrated Firebase Realtime Database with frontend
+Displayed live sensor readings on React dashboard
+Implemented real-time cloud synchronization
+
+IT22202772 | Gamaariya C. C.
+integrated HC-SR04 ultrasonic sensor with ESP32
+Developed smart bin fill level monitoring system
+Integrated magnetic reed switch for lid activity detection
+Sent real-time sensor data to Firebase Realtime Database
+Integrated Firebase with React frontend dashboard
+Displayed live bin status and fill level data
+Implemented Green / Yellow / Red bin status indicator system
+Developed alert system for overflow conditions

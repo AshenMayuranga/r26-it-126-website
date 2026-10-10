@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Waste Management System - an IoT and machine-learning research project for municipal solid waste management, with a mobile app for real-time bin detection and route optimization. Group R26-IT-126, SLIIT.">
+    <meta name="theme-color" content="#0fa86c">
+
+    <!-- Link preview card (WhatsApp, Facebook, LinkedIn, Teams...).
+         AT HOSTING: change og:image / twitter:image to the full address, e.g.
+         https://your-site-address/images/field-visit/visit-team-sabha.jpg
+         and add <meta property="og:url" content="https://your-site-address/"> -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SmartWaste R26-IT-126">
+    <meta property="og:title" content="Smart Waste Management System | R26-IT-126 | SLIIT">
+    <meta property="og:description" content="Smart Waste Management System - an IoT and machine-learning research project for municipal solid waste management, with a mobile app for real-time bin detection and route optimization. Group R26-IT-126, SLIIT.">
+    <meta property="og:image" content="images/field-visit/visit-team-sabha.jpg">
+    <meta property="og:image:alt" content="The R26-IT-126 research team at the Bandaragama Pradeshiya Sabha">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="900">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Smart Waste Management System | R26-IT-126 | SLIIT">
+    <meta name="twitter:description" content="Smart Waste Management System - an IoT and machine-learning research project for municipal solid waste management, with a mobile app for real-time bin detection and route optimization. Group R26-IT-126, SLIIT.">
+    <meta name="twitter:image" content="images/field-visit/visit-team-sabha.jpg">
+    <meta name="keywords" content="Smart Waste Management, IoT, ESP32, Machine Learning, Route Optimization, Mobile Application, Flutter, SLIIT, Research Project">
+    <meta name="author" content="Group R26-IT-126">
+    <title>Smart Waste Management System | R26-IT-126 | SLIIT Research Project</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230fa86c'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='white'%3E%E2%99%BB%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#home" class="skip-link">Skip to main content</a>
+
+    <noscript>
+        <div class="noscript-bar">
+            <i class="fas fa-info-circle"></i>
+            JavaScript is turned off in your browser. All content and documents are still available,
+            but the search, photo viewer, mobile menu and contact form need JavaScript to work.
+        </div>
+    </noscript>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">SmartWaste</span>
+                    <span class="logo-sub">R26-IT-126</span>
+                </div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#domain" class="nav-link dropdown-toggle">Project Scope <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#literature-review">Literature Review</a></li>
+                        <li><a href="#research-gap">Research Gap</a></li>
+                        <li><a href="#research-problem">Research Problem & Solution</a></li>
+                        <li><a href="#research-objectives">Research Objectives</a></li>
+                        <li><a href="#methodology">Methodology</a></li>
+                        <li><a href="#technologies">Technologies</a></li>
+                        <li><a href="#architecture">System Architecture</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#milestones" class="nav-link dropdown-toggle">Milestones <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#ms-proposal">Project Proposal</a></li>
+                        <li><a href="#ms-pp1">Progress Presentation 1</a></li>
+                        <li><a href="#ms-pp2">Progress Presentation 2</a></li>
+                        <li><a href="#ms-final">Final Assessment</a></li>
+                        <li><a href="#ms-viva">Viva Voce</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#results" class="nav-link dropdown-toggle">Results <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#results">Results &amp; Findings</a></li>
+                        <li><a href="#field-visit">Field Visit &amp; Feedback</a></li>
+                    </ul>
+                </li>
+                <li><a href="#documents" class="nav-link">Documents</a></li>
+                <li><a href="#presentations" class="nav-link">Presentations</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
+            </ul>
+            <button class="nav-search-btn" id="search-open" aria-label="Search this site" title="Search (Ctrl + K)">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== SITE SEARCH ==================== -->
+    <div class="search-overlay" id="search-overlay" hidden>
+        <div class="search-box" role="dialog" aria-modal="true" aria-label="Search this site">
+            <div class="search-input-wrap">
+                <i class="fas fa-search"></i>
+                <input type="search" id="search-input" placeholder="Search topics, documents, members, technologies..." autocomplete="off" aria-label="Search">
+                <button class="search-close" id="search-close" aria-label="Close search">Esc</button>
+            </div>
+            <ul class="search-results" id="search-results"></ul>
+            <p class="search-hint" id="search-hint">Try: <b>thesis</b>, <b>XGBoost</b>, <b>Firebase</b>, <b>Progress Presentation 2</b>, <b>Wijesiri</b></p>
+        </div>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home" tabindex="-1">
+        <div class="hero-particles" id="hero-particles"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-flask"></i> SLIIT Research Project 2026
+            </div>
+            <h1 class="hero-title">
+                Smart Waste<br>
+                <span class="gradient-text">Management System</span>
+            </h1>
+            <p class="hero-subtitle">
+                An IoT-driven, intelligent municipal solid waste management framework combining environmental sensing, fill-level monitoring, ML-based prediction, and a mobile application for adaptive route optimization and resident–driver coordination for sustainable urban waste collection.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Components</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Researchers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">SDGs Targeted</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="96" data-suffix="%">0</div>
+                    <div class="stat-label">Fill-Status Accuracy</div>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#domain" class="btn btn-primary"><i class="fas fa-microscope"></i> Explore Research</a>
+                <a href="#about" class="btn btn-outline"><i class="fas fa-users"></i> Meet the Team</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <i class="fas fa-wifi"></i>
+                <span>IoT Sensing</span>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-brain"></i>
+                <span>ML Prediction</span>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-route"></i>
+                <span>Route Optimization</span>
+            </div>
+            <div class="floating-card card-4">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile App</span>
+            </div>
+        </div>
+        <a href="#domain" class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </a>
+    </section>
+
+    <!-- ==================== DOMAIN (Project Scope) ==================== -->
+    <div id="domain">
+
+    <!-- ==================== LITERATURE REVIEW ==================== -->
+    <section class="section" id="literature-review">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-book-open"></i> Project Scope</span>
+                <h2 class="section-title">Literature Review</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="lit-review-content">
+                <div class="lit-card">
+                    <div class="lit-card-icon"><i class="fas fa-city"></i></div>
+                    <h3>Urban Waste Crisis</h3>
+                    <p>The World Bank projects that global solid waste generation will reach 3.4 billion tons annually by 2050, a 70% increase on 2016 levels. In Sri Lanka, the Colombo Municipal Council alone generates approximately 800 tons of municipal solid waste per day, and existing infrastructure operates well below the level needed for effective management.</p>
+                </div>
+                <div class="lit-card">
+                    <div class="lit-card-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>IoT in Waste Management</h3>
+                    <p>Low-cost IoT platforms, particularly ESP32-class microcontrollers with integrated Wi-Fi, and cloud services such as Firebase make intelligent, data-driven waste management feasible. Existing smart bins predominantly monitor a single parameter — fill level — and lack environmental and gas sensing capabilities.</p>
+                </div>
+                <div class="lit-card">
+                    <div class="lit-card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>ML-Based Prediction</h3>
+                    <p>Research demonstrates that machine learning models, particularly XGBoost regression, can effectively predict waste volumes using historical municipal records combined with rainfall, temporal, zonal, demographic, and calendar features. Dynamic, sensor-informed routing can reduce operational cost by up to 40% compared with static scheduling.</p>
+                </div>
+                <div class="lit-card">
+                    <div class="lit-card-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Smart Collection Systems</h3>
+                    <p>Existing solutions address waste collection with fixed schedules and limited real-time information. There is a need for an integrated mobile workflow connecting IoT-derived critical-bin information with resident–driver coordination, combining GPS tracking, route assistance, and proximity-based notifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RESEARCH GAP ==================== -->
+    <section class="section section-alt" id="research-gap">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-search"></i> Identification</span>
+                <h2 class="section-title">Research Gap</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="gap-grid">
+                <div class="gap-card">
+                    <div class="gap-number">01</div>
+                    <h3>Absence of Environmental Sensing</h3>
+                    <p>Most commercial smart bins report fill level only; hazardous-gas (methane, ammonia, CO₂) and thermal-environmental data are missing from the telemetry, leaving sanitation workers exposed to avoidable gas hazards.</p>
+                    <div class="gap-tag">Component 1</div>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-number">02</div>
+                    <h3>Limited Behavioral Monitoring</h3>
+                    <p>Existing systems show that a bin is full but not how it got that way. There is no detection of illegal dumping, sudden fill spikes, abnormal lid activity, extended lid opening, or imminent overflow patterns.</p>
+                    <div class="gap-tag">Component 2</div>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-number">03</div>
+                    <h3>Insufficient Data for ML Models</h3>
+                    <p>Single-parameter fill-level data provide insufficient features for waste composition prediction. Localized municipal-level forecasting combining environmental, temporal, and demographic features is largely unexplored for Sri Lankan contexts.</p>
+                    <div class="gap-tag">Component 3</div>
+                </div>
+                <div class="gap-card">
+                    <div class="gap-number">04</div>
+                    <h3>Weak Coordination Workflows</h3>
+                    <p>There is a gap in integrating IoT-derived critical-bin information with a unified mobile coordination workflow for resident–driver communication, live vehicle tracking, and proximity-based arrival notifications.</p>
+                    <div class="gap-tag">Component 4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RESEARCH PROBLEM & SOLUTION ==================== -->
+    <section class="section" id="research-problem">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-exclamation-triangle"></i> Core Challenge</span>
+                <h2 class="section-title">Research Problem & Solution</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="problem-solution">
+                <div class="problem-box">
+                    <div class="ps-icon"><i class="fas fa-times-circle"></i></div>
+                    <h3>The Problem</h3>
+                    <p>Conventional municipal waste collection follows fixed routes and schedules with no real-time knowledge of bin conditions. Waste collection decisions are made without knowledge of the environmental state of each bin — a half-full bin emitting elevated methane or ammonia may need priority collection for safety and odour reasons, yet no fill-level-only system can flag it. This leads to:</p>
+                    <ul>
+                        <li>Premature collection of part-filled bins</li>
+                        <li>Delayed service to overflowing bins</li>
+                        <li>Higher fuel consumption and excess labour</li>
+                        <li>Worker exposure to hazardous gas conditions</li>
+                        <li>Avoidable environmental contamination</li>
+                    </ul>
+                </div>
+                <div class="solution-box">
+                    <div class="ps-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Our Solution</h3>
+                    <p>A comprehensive Smart Waste Management System that builds an end-to-end predictive framework combining four integrated components:</p>
+                    <ul>
+                        <li>IoT-based environmental and gas sensing with real-time cloud telemetry</li>
+                        <li>Smart fill-level monitoring with anomaly detection and behavior-aware tracking</li>
+                        <li>ML-based municipal waste prediction, composition estimation, and circular economy revenue modeling</li>
+                        <li>Mobile application for real-time bin detection, adaptive route optimization, and resident-driver coordination</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RESEARCH OBJECTIVES ==================== -->
+    <section class="section section-alt" id="research-objectives">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-bullseye"></i> Goals</span>
+                <h2 class="section-title">Research Objectives</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <div class="obj-icon"><i class="fas fa-thermometer-half"></i></div>
+                    <h4>Environmental Sensing Smart Bin</h4>
+                    <span class="obj-member">Hemsara K.D.S. (IT22548528)</span>
+                    <ul>
+                        <li>Design and build an ESP32-based sensing unit with MQ-135, MQ-4, and DHT22 sensors</li>
+                        <li>Implement GREEN/YELLOW/RED criticality classification using multi-parameter thresholds</li>
+                        <li>Publish timestamped JSON telemetry to Firebase Realtime Database</li>
+                        <li>Achieve defined targets for sensor accuracy, alert accuracy, delivery rate, latency and uptime</li>
+                    </ul>
+                </div>
+                <div class="objective-card">
+                    <div class="obj-icon"><i class="fas fa-fill-drip"></i></div>
+                    <h4>Smart Fill-Level & Occupancy Monitoring</h4>
+                    <span class="obj-member">Gamaariya C.C. (IT22202772)</span>
+                    <ul>
+                        <li>Combine HC-SR04 ultrasonic sensor and magnetic reed switch on ESP32</li>
+                        <li>Classify bin fill into OK, Warning, and Critical status levels</li>
+                        <li>Implement rule-based anomaly detection for illegal dumping, fill spikes, and abnormal activity</li>
+                        <li>Achieve &gt;95% fill-classification accuracy and &gt;90% anomaly detection accuracy</li>
+                    </ul>
+                </div>
+                <div class="objective-card">
+                    <div class="obj-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h4>ML-Based Waste Prediction & Revenue Hub</h4>
+                    <span class="obj-member">Jayawardhane K.G.M.S. (IT22213358)</span>
+                    <ul>
+                        <li>Develop XGBoost regression pipelines for wet and dry waste prediction</li>
+                        <li>Integrate rainfall, temporal, zonal, demographic, and calendar features</li>
+                        <li>Build composition estimation, compactor planning, and resource-recovery modules</li>
+                        <li>Target &gt;85% predictive accuracy on municipal test data</li>
+                    </ul>
+                </div>
+                <div class="objective-card">
+                    <div class="obj-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h4>Mobile App for Real-Time Bin Detection, Adaptive Route Optimization &amp; Resident-Driven Coordination</h4>
+                    <span class="obj-member">Wijesiri A.M. (IT22088482)</span>
+                    <ul>
+                        <li>Integrate IoT-based smart-bin monitoring to identify bins reaching critical waste levels in real time</li>
+                        <li>Develop a mobile map interface that enables drivers to identify and prioritize critical bins</li>
+                        <li>Develop a resident–driver coordination mechanism for submitting and managing pickup requests</li>
+                        <li>Implement route support for drivers based on their current location and collection points</li>
+                        <li>Evaluate the usability, functionality, and effectiveness of the mobile-based system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== METHODOLOGY ==================== -->
+    <section class="section" id="methodology">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-project-diagram"></i> Approach</span>
+                <h2 class="section-title">Methodology</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="methodology-content">
+                <div class="method-overview">
+                    <p>The project follows a <strong>design-science, design-and-development</strong> approach: each of the four components designs and builds a working artefact and evaluates it against predefined targets. Development proceeds through problem identification, solution design, artefact creation, and evaluation.</p>
+                </div>
+                <div class="method-timeline">
+                    <div class="method-step">
+                        <div class="step-marker">1</div>
+                        <div class="step-content">
+                            <h4>Problem Identification</h4>
+                            <p>Systematic literature review and gap analysis identifying limitations in current waste management approaches, covering IoT sensing, ML prediction, and mobile coordination.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-marker">2</div>
+                        <div class="step-content">
+                            <h4>Solution Design</h4>
+                            <p>Architecture design of four integrated components with defined interfaces. Hardware selection (ESP32, MQ sensors, DHT22, HC-SR04), ML model selection (XGBoost), and mobile framework decisions.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-marker">3</div>
+                        <div class="step-content">
+                            <h4>Artifact Development</h4>
+                            <p>Implementation of IoT firmware (Arduino/C++), cloud integration (Firebase Realtime Database), ML pipelines (Python/XGBoost) with a Flask back-end, web dashboards (React), and a Flutter mobile application with GPS tracking, live maps, and route support.</p>
+                        </div>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-marker">4</div>
+                        <div class="step-content">
+                            <h4>Evaluation & Validation</h4>
+                            <p>Testing against predefined metrics: sensor accuracy, fill-status classification, anomaly detection, prediction accuracy, cloud delivery and latency, and end-to-end functional test scenarios. See <a href="#results" class="inline-link">Results &amp; Findings</a> for the measured outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TECHNOLOGIES ==================== -->
+    <section class="section section-alt" id="technologies">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-cogs"></i> Stack</span>
+                <h2 class="section-title">Technologies Used</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3><i class="fas fa-microchip"></i> Hardware & IoT</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-name">ESP32</span>
+                            <span class="tech-desc">Microcontroller</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">MQ-135</span>
+                            <span class="tech-desc">Air Quality Sensor</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">MQ-4</span>
+                            <span class="tech-desc">Methane Sensor</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">DHT22</span>
+                            <span class="tech-desc">Temp/Humidity</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">HC-SR04</span>
+                            <span class="tech-desc">Ultrasonic Sensor</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Reed Switch</span>
+                            <span class="tech-desc">Magnetic Sensor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud & Backend</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-name">Firebase</span>
+                            <span class="tech-desc">Realtime Database</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Flask</span>
+                            <span class="tech-desc">ML Back-end (REST API)</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">MongoDB</span>
+                            <span class="tech-desc">Prediction Run Storage</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">FCM</span>
+                            <span class="tech-desc">Push Notifications</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Cloud Firestore</span>
+                            <span class="tech-desc">Mobile App Data &amp; Real-Time Streams</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Firebase Auth</span>
+                            <span class="tech-desc">User Authentication</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Cloudflare Workers</span>
+                            <span class="tech-desc">Serverless Backend (TypeScript)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-brain"></i> ML & Data Science</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-name">Python</span>
+                            <span class="tech-desc">Programming Language</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">XGBoost</span>
+                            <span class="tech-desc">ML Framework</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Scikit-learn</span>
+                            <span class="tech-desc">Data Processing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-laptop-code"></i> Frontend & Mobile</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-name">React</span>
+                            <span class="tech-desc">Web Dashboard</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Flutter / Dart</span>
+                            <span class="tech-desc">Mobile App</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Arduino/C++</span>
+                            <span class="tech-desc">Firmware</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">OSRM</span>
+                            <span class="tech-desc">Road-Route Geometry</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">OpenStreetMap</span>
+                            <span class="tech-desc">Maps (flutter_map)</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Geolocator</span>
+                            <span class="tech-desc">GPS Location</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SYSTEM ARCHITECTURE ==================== -->
+    <section class="section" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-sitemap"></i> Architecture</span>
+                <h2 class="section-title">System Architecture</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <h3 class="layer-title">IoT Sensing Layer</h3>
+                    <div class="arch-nodes">
+                        <div class="arch-node node-iot">
+                            <i class="fas fa-smog"></i>
+                            <span>Environmental Sensing</span>
+                            <small>MQ-135, MQ-4, DHT22</small>
+                        </div>
+                        <div class="arch-connector"><i class="fas fa-arrows-alt-h"></i></div>
+                        <div class="arch-node node-iot">
+                            <i class="fas fa-fill-drip"></i>
+                            <span>Fill-Level Monitoring</span>
+                            <small>HC-SR04, Reed Switch</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-down"></i></div>
+                <div class="arch-layer">
+                    <h3 class="layer-title">Cloud & Processing Layer</h3>
+                    <div class="arch-nodes">
+                        <div class="arch-node node-cloud">
+                            <i class="fas fa-database"></i>
+                            <span>Firebase Realtime DB</span>
+                            <small>Data Storage & Sync</small>
+                        </div>
+                        <div class="arch-connector"><i class="fas fa-arrows-alt-h"></i></div>
+                        <div class="arch-node node-ml">
+                            <i class="fas fa-brain"></i>
+                            <span>ML Prediction Engine</span>
+                            <small>XGBoost · Flask API</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-down"></i></div>
+                <div class="arch-layer">
+                    <h3 class="layer-title">Application Layer</h3>
+                    <div class="arch-nodes">
+                        <div class="arch-node node-app">
+                            <i class="fas fa-desktop"></i>
+                            <span>Web Dashboard</span>
+                            <small>React Dashboard</small>
+                        </div>
+                        <div class="arch-connector"><i class="fas fa-arrows-alt-h"></i></div>
+                        <div class="arch-node node-app">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile App</span>
+                            <small>Flutter · Route &amp; Coordination</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+    <!-- ==================== END DOMAIN ==================== -->
+
+    <!-- ==================== RESULTS & FINDINGS ==================== -->
+    <section class="section section-alt" id="results">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-chart-line"></i> Findings</span>
+                <h2 class="section-title">Results &amp; Findings</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Key evaluation results of each component, as reported in the individual theses.</p>
+            </div>
+            <div class="objectives-grid">
+                <div class="objective-card result-card">
+                    <div class="obj-icon"><i class="fas fa-temperature-high"></i></div>
+                    <h4>Environmental Sensing Smart Bin</h4>
+                    <span class="obj-member">Hemsara K.D.S. (IT22548528)</span>
+                    <div class="result-metrics">
+                        <div class="result-metric">
+                            <span class="result-value">95.0%</span>
+                            <span class="result-label">Gas-alert true-positive rate</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">99.4%</span>
+                            <span class="result-label">Payload delivery to cloud</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">1.84 s</span>
+                            <span class="result-label">Mean cloud latency</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">30 days</span>
+                            <span class="result-label">Continuous run, 2.1% missing data</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Acquired and transmitted MQ-135, MQ-4 and DHT22 readings to Firebase in real time</li>
+                        <li>DHT22 temperature RMSE of 0.82 °C and humidity RMSE of 2.74 %RH</li>
+                        <li>Maximum recorded cloud latency of 4.63 s, within the 5 s target</li>
+                        <li>Met the main predefined targets for sensing, cloud communication and long-term data collection</li>
+                    </ul>
+                </div>
+                <div class="objective-card result-card">
+                    <div class="obj-icon"><i class="fas fa-fill-drip"></i></div>
+                    <h4>Smart Fill-Level &amp; Occupancy Monitoring</h4>
+                    <span class="obj-member">Gamaariya C.C. (IT22202772)</span>
+                    <div class="result-metrics">
+                        <div class="result-metric">
+                            <span class="result-value">96 / 100</span>
+                            <span class="result-label">Fill-status test cases classified correctly</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">57 / 60</span>
+                            <span class="result-label">Anomaly scenarios detected</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">1.8 s</span>
+                            <span class="result-label">Mean alert latency</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">495 / 500</span>
+                            <span class="result-label">Readings received in Firebase</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Ultrasonic distance error of 0.2–0.3 cm (MAE) at 5, 15 and 25 cm reference distances</li>
+                        <li>Illegal dumping, fill spikes, abnormal lid activity, extended lid opening and overflow detected in 90–100% of test scenarios</li>
+                        <li>Maximum alert latency of 2.9 s across all test runs</li>
+                        <li>Live bin status and archived records were successfully consumed by the other components</li>
+                    </ul>
+                </div>
+                <div class="objective-card result-card">
+                    <div class="obj-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h4>ML-Based Waste Prediction &amp; Revenue Hub</h4>
+                    <span class="obj-member">Jayawardhane K.G.M.S. (IT22213358)</span>
+                    <div class="result-metrics">
+                        <div class="result-metric">
+                            <span class="result-value">87.67%</span>
+                            <span class="result-label">Dry-waste prediction accuracy</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">80.85%</span>
+                            <span class="result-label">Wet-waste prediction accuracy</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">0.949</span>
+                            <span class="result-label">Dry-waste R²</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">126</span>
+                            <span class="result-label">Held-out test records</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Dry waste was forecast more accurately than wet waste (R² 0.9492 vs 0.8035)</li>
+                        <li>Dry-waste R² exceeded 0.90 in all four zones</li>
+                        <li>Mean absolute error (1.52 t dry, 3.28 t wet) stayed below the capacity of one 5-tonne truck</li>
+                        <li>Forecasts were converted into truck trips, waste composition and revenue estimates in a working dashboard</li>
+                    </ul>
+                </div>
+                <div class="objective-card result-card">
+                    <div class="obj-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h4>Mobile App for Real-Time Bin Detection, Adaptive Route Optimization &amp; Resident-Driven Coordination</h4>
+                    <span class="obj-member">Wijesiri A.M. (IT22088482)</span>
+                    <div class="result-metrics">
+                        <div class="result-metric">
+                            <span class="result-value">8 / 8</span>
+                            <span class="result-label">Workflows verified in practical tests</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">3</span>
+                            <span class="result-label">User roles: resident, driver, admin</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">~30</span>
+                            <span class="result-label">Application screens</span>
+                        </div>
+                        <div class="result-metric">
+                            <span class="result-value">Real-time</span>
+                            <span class="result-label">Tracking &amp; arrival notification</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Resident pickup requests appeared on the driver map in real time</li>
+                        <li>Driver movement was visible to residents, and the nearest-truck display updated as vehicles moved</li>
+                        <li>Proximity condition triggered the expected &ldquo;Truck is here&rdquo; arrival notification</li>
+                        <li>Critical IoT bin events were shown in red on the driver map</li>
+                        <li>Registration/OTP, password recovery and admin deactivation/recovery workflows operated as expected</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="result-integration">
+                <i class="fas fa-project-diagram"></i>
+                <p><strong>Integration:</strong> The four components were integrated through Firebase. Live bin status from the IoT components was read by the mobile application, and archived sensor data was available to the ML component for time-series processing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FIELD VISIT ==================== -->
+    <section class="section" id="field-visit">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-handshake"></i> Stakeholder Engagement</span>
+                <h2 class="section-title">Field Visit: Bandaragama Pradeshiya Sabha</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">The team presented the Smart Waste Management System to the Chairman of the Bandaragama Pradeshiya Sabha, a local authority responsible for municipal waste collection, to get real-world feedback on the solution.</p>
+            </div>
+
+            <div class="visit-layout">
+                <figure class="visit-feature">
+                    <a href="images/field-visit/visit-team-sabha.jpg" class="visit-photo-link" data-caption="The research team at the Bandaragama Pradeshiya Sabhawa">
+                        <img src="images/field-visit/visit-team-sabha.jpg" alt="The research team in front of the Bandaragama Pradeshiya Sabhawa office" loading="lazy">
+                    </a>
+                    <figcaption>The research team at the Bandaragama Pradeshiya Sabhawa</figcaption>
+                </figure>
+
+                <div class="visit-info">
+                    <ul class="visit-facts">
+                        <li><i class="fas fa-calendar-alt"></i><div><span>Date</span>October 2026</div></li>
+                        <li><i class="fas fa-landmark"></i><div><span>Place</span>Bandaragama Pradeshiya Sabha, Kalutara District</div></li>
+                        <li><i class="fas fa-user-tie"></i><div><span>Met with</span>Mr. Samith Jaya (&#3523;&#3512;&#3538;&#3501;&#3530; &#3490;&#3514;), Chairman</div></li>
+                        <li><i class="fas fa-laptop-code"></i><div><span>Demonstrated</span>IoT smart bin prototype, mobile application and web dashboard</div></li>
+                    </ul>
+
+                    <div class="visit-feedback">
+                        <i class="fas fa-quote-left"></i>
+                        <h4>Feedback</h4>
+                        <p>The Chairman appreciated the project and its value for local-authority waste collection, giving the team positive feedback on the proposed solution.</p>
+                    </div>
+
+                    <div class="visit-contact">
+                        <a href="https://bandaragama.ps.gov.lk/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Official website</a>
+                        <a href="tel:+94382290975"><i class="fas fa-phone"></i> 038 229 0975</a>
+                        <a href="https://wa.me/94706890975" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> 070 689 0975</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visit-gallery">
+                <figure class="visit-thumb">
+                    <a href="images/field-visit/visit-discussion.jpg" class="visit-photo-link" data-caption="Discussing the smart bin prototype and getting feedback">
+                        <img src="images/field-visit/visit-discussion.jpg" alt="Discussing the smart bin prototype and getting feedback" loading="lazy">
+                    </a>
+                    <figcaption>Discussing the smart bin prototype and getting feedback</figcaption>
+                </figure>
+                <figure class="visit-thumb">
+                    <a href="images/field-visit/visit-mobile-app.jpg" class="visit-photo-link" data-caption="Demonstrating the mobile application">
+                        <img src="images/field-visit/visit-mobile-app.jpg" alt="Demonstrating the mobile application" loading="lazy">
+                    </a>
+                    <figcaption>Demonstrating the mobile application</figcaption>
+                </figure>
+                <figure class="visit-thumb">
+                    <a href="images/field-visit/visit-dashboard.jpg" class="visit-photo-link" data-caption="Walking through the web dashboard">
+                        <img src="images/field-visit/visit-dashboard.jpg" alt="Walking through the web dashboard" loading="lazy">
+                    </a>
+                    <figcaption>Walking through the web dashboard</figcaption>
+                </figure>
+                <figure class="visit-thumb">
+                    <a href="images/field-visit/visit-smart-bin.jpg" class="visit-photo-link" data-caption="Presenting the IoT smart bin">
+                        <img src="images/field-visit/visit-smart-bin.jpg" alt="Presenting the IoT smart bin" loading="lazy">
+                    </a>
+                    <figcaption>Presenting the IoT smart bin</figcaption>
+                </figure>
+                <figure class="visit-thumb">
+                    <a href="images/field-visit/visit-team-office.jpg" class="visit-photo-link" data-caption="The research team at the Pradeshiya Sabha">
+                        <img src="images/field-visit/visit-team-office.jpg" alt="The research team at the Pradeshiya Sabha" loading="lazy">
+                    </a>
+                    <figcaption>The research team at the Pradeshiya Sabha</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo viewer for the field-visit gallery -->
+    <div class="lightbox" id="lightbox" hidden>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close photo"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo"><i class="fas fa-chevron-left"></i></button>
+        <figure>
+            <img id="lightbox-img" alt="Field visit photo">
+            <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- ==================== MILESTONES ==================== -->
+    <section class="section section-alt" id="milestones">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-flag-checkered"></i> Timeline</span>
+                <h2 class="section-title">Milestones</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">All assessments of the research project with their dates and marks. Select a milestone to view its details.</p>
+            </div>
+            <div class="milestone-timeline">
+                <details class="milestone-item completed" id="ms-proposal">
+                    <summary class="milestone-summary">
+                        <span class="milestone-dot"></span>
+                        <span class="milestone-head">
+                            <span class="milestone-date">February 2026</span>
+                            <span class="milestone-title">Project Proposal</span>
+                        </span>
+                        <span class="milestone-meta">
+                            <span class="milestone-status">Completed</span>
+                            <span class="milestone-marks">6%</span>
+                            <i class="fas fa-chevron-down milestone-chevron"></i>
+                        </span>
+                    </summary>
+                    <div class="milestone-body">
+                        <p>Initial project proposal presentation covering problem identification, literature survey, proposed methodology, and individual component definitions.</p>
+                        <ul class="milestone-list">
+                            <li>Proposal presentation (group)</li>
+                            <li>Individual proposal reports (4)</li>
+                        </ul>
+                        <div class="milestone-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span><strong>Component revision:</strong> Following panel feedback at the proposal presentation, the component of Wijesiri A.M. (IT22088482) was revised from <em>ML-Based Waste Level Prediction</em> to <em>Mobile Application for Real-Time Bin Detection, Adaptive Route Optimization, and Resident-Driven Coordination</em>. The revised component has been followed from Progress Presentation 1 onwards.</span>
+                        </div>
+                        <div class="milestone-marks-row">Marks Allocated: <strong>6%</strong></div>
+                    </div>
+                </details>
+                <details class="milestone-item completed" id="ms-pp1">
+                    <summary class="milestone-summary">
+                        <span class="milestone-dot"></span>
+                        <span class="milestone-head">
+                            <span class="milestone-date">May 2026</span>
+                            <span class="milestone-title">Progress Presentation 1</span>
+                        </span>
+                        <span class="milestone-meta">
+                            <span class="milestone-status">Completed</span>
+                            <span class="milestone-marks">15%</span>
+                            <i class="fas fa-chevron-down milestone-chevron"></i>
+                        </span>
+                    </summary>
+                    <div class="milestone-body">
+                        <p>First progress review demonstrating initial prototype development, data collection progress, and preliminary results for each individual component.</p>
+                        <ul class="milestone-list">
+                            <li>Progress presentation slides</li>
+                            <li>Prototype demonstration</li>
+                        </ul>
+                        <div class="milestone-marks-row">Marks Allocated: <strong>15%</strong></div>
+                    </div>
+                </details>
+                <details class="milestone-item completed" id="ms-pp2">
+                    <summary class="milestone-summary">
+                        <span class="milestone-dot"></span>
+                        <span class="milestone-head">
+                            <span class="milestone-date">September 2026</span>
+                            <span class="milestone-title">Progress Presentation 2</span>
+                        </span>
+                        <span class="milestone-meta">
+                            <span class="milestone-status">Completed</span>
+                            <span class="milestone-marks">18%</span>
+                            <i class="fas fa-chevron-down milestone-chevron"></i>
+                        </span>
+                    </summary>
+                    <div class="milestone-body">
+                        <p>Second progress review showcasing integrated system demonstration, evaluation results, and near-final implementation of all four components.</p>
+                        <ul class="milestone-list">
+                            <li>Progress presentation slides</li>
+                            <li>Integrated system demonstration</li>
+                        </ul>
+                        <div class="milestone-marks-row">Marks Allocated: <strong>18%</strong></div>
+                    </div>
+                </details>
+                <details class="milestone-item current" id="ms-final">
+                    <summary class="milestone-summary">
+                        <span class="milestone-dot"></span>
+                        <span class="milestone-head">
+                            <span class="milestone-date">October 2026</span>
+                            <span class="milestone-title">Final Assessment</span>
+                        </span>
+                        <span class="milestone-meta">
+                            <span class="milestone-status">In Progress</span>
+                            <span class="milestone-marks">40%</span>
+                            <i class="fas fa-chevron-down milestone-chevron"></i>
+                        </span>
+                    </summary>
+                    <div class="milestone-body">
+                        <p>Final project assessment including thesis submission, complete system demonstration, and evaluation of the integrated Smart Waste Management System.</p>
+                        <ul class="milestone-list">
+                            <li>Individual theses (4)</li>
+                            <li>Final presentation and complete system demonstration</li>
+                            <li>Research website</li>
+                        </ul>
+                        <div class="milestone-marks-row">Marks Allocated: <strong>40%</strong></div>
+                    </div>
+                </details>
+                <details class="milestone-item upcoming" id="ms-viva">
+                    <summary class="milestone-summary">
+                        <span class="milestone-dot"></span>
+                        <span class="milestone-head">
+                            <span class="milestone-date">November 2026</span>
+                            <span class="milestone-title">Viva Voce</span>
+                        </span>
+                        <span class="milestone-meta">
+                            <span class="milestone-status">Upcoming</span>
+                            <span class="milestone-marks">21%</span>
+                            <i class="fas fa-chevron-down milestone-chevron"></i>
+                        </span>
+                    </summary>
+                    <div class="milestone-body">
+                        <p>Final viva voce examination to defend the research work, methodology, results, and contributions of the individual thesis components.</p>
+                        <div class="milestone-marks-row">Marks Allocated: <strong>21%</strong></div>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DOCUMENTS ==================== -->
+    <section class="section" id="documents">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-file-alt"></i> Resources</span>
+                <h2 class="section-title">Documents</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">All research documents produced from the proposal stage to the final stage of the project. Documents open in a new tab.</p>
+            </div>
+            <!--
+                HOW TO ADD A DOCUMENT LINK:
+                Put the file in the docs/ folder and set href to its path, e.g.
+                <a href="docs/theses/My_File.pdf" class="doc-item">
+                (a Google Drive share link also works).
+                Items left as href="#" are shown automatically as "Coming soon"
+                (or "Pending" when data-status="pending").
+            -->
+            <div class="docs-grid">
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <i class="fas fa-file-signature"></i>
+                        <h3>Project Proposal Reports</h3>
+                    </div>
+                    <p class="doc-note"><i class="fas fa-info-circle"></i><span>Original proposal reports as submitted in March 2026. One component was revised after the proposal presentation &mdash; see <a href="#ms-proposal" class="inline-link">Milestones</a>.</span></p>
+                    <div class="doc-list">
+                        <a href="docs/proposals/R26-IT-126_IT22548528_Hemsara_K_D_S_Proposal.pdf" class="doc-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Proposal - Hemsara K.D.S.</span>
+                                <span class="doc-desc">IT22548528 · Environmental Sensing Smart Bin</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                        <a href="docs/proposals/R26-IT-126_IT22202772_Gamaariya_C_C_Proposal.pdf" class="doc-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Proposal - Gamaariya C.C.</span>
+                                <span class="doc-desc">IT22202772 · Smart Fill-Level &amp; Occupancy Monitoring</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                        <a href="docs/proposals/R26-IT-126_IT22213358_Jayawardhane_K_G_M_S_Proposal.pdf" class="doc-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Proposal - Jayawardhane K.G.M.S.</span>
+                                <span class="doc-desc">IT22213358 · ML-Based Waste Prediction &amp; Revenue Hub</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                        <a href="docs/proposals/R26-IT-126_IT22088482_Wijesiri_A_M_Proposal.pdf" class="doc-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Proposal - Wijesiri A.M.</span>
+                                <span class="doc-desc">IT22088482 · ML-Based Waste Level Prediction (original component, revised after the proposal presentation)</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <i class="fas fa-book"></i>
+                        <h3>Individual Theses</h3>
+                    </div>
+                    <div class="doc-list">
+                        <a href="docs/theses/R26-IT-126_IT22548528_Hemsara_K_D_S_Thesis.pdf" class="doc-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Thesis - Hemsara K.D.S.</span>
+                                <span class="doc-desc">IT22548528 · Environmental Sensing Smart Bin</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                        <a href="docs/theses/R26-IT-126_IT22202772_Gamaariya_C_C_Thesis.pdf" class="doc-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Thesis - Gamaariya C.C.</span>
+                                <span class="doc-desc">IT22202772 · Smart Fill-Level &amp; Occupancy Monitoring</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                        <a href="docs/theses/R26-IT-126_IT22213358_Jayawardhane_K_G_M_S_Thesis.pdf" class="doc-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Thesis - Jayawardhane K.G.M.S.</span>
+                                <span class="doc-desc">IT22213358 · ML-Based Waste Prediction &amp; Revenue Hub</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                        <a href="docs/theses/R26-IT-126_IT22088482_Wijesiri_A_M_Thesis.pdf" class="doc-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Thesis - Wijesiri A.M.</span>
+                                <span class="doc-desc">IT22088482 · Mobile App for Real-Time Bin Detection, Adaptive Route Optimization &amp; Resident-Driven Coordination</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Check List Documents</h3>
+                    </div>
+                    <div class="doc-list">
+                        <a href="docs/checklists/Checklist_1_Work_Completed.txt" class="doc-item">
+                            <i class="fas fa-file-alt"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Check List 1</span>
+                                <span class="doc-desc">Work completed by each member</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                        <a href="#" class="doc-item" data-status="pending">
+                            <i class="fas fa-file-alt"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Check List 2</span>
+                                <span class="doc-desc">Second checklist submission</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="doc-category">
+                    <div class="doc-category-header">
+                        <i class="fas fa-file-contract"></i>
+                        <h3>Project Charter &amp; Final Report</h3>
+                    </div>
+                    <div class="doc-list">
+                        <a href="#" class="doc-item" data-status="pending">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Project Charter</span>
+                                <span class="doc-desc">Group project charter document</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                        <a href="#" class="doc-item" data-status="pending">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="doc-info">
+                                <span class="doc-name">Final Group Report</span>
+                                <span class="doc-desc">Comprehensive group project report</span>
+                            </div>
+                            <i class="fas fa-external-link-alt doc-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRESENTATIONS ==================== -->
+    <section class="section section-alt" id="presentations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-person-chalkboard"></i> Slides</span>
+                <h2 class="section-title">Presentations</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Slides from all presentations delivered during the research project. Slides open as PDF in a new tab.</p>
+            </div>
+            <!--
+                HOW TO ADD SLIDES: put the PDF in docs/presentations/ and set the
+                .pres-link href to its path (a Google Drive / YouTube link also works).
+            -->
+            <div class="presentations-grid">
+                <div class="pres-card">
+                    <div class="pres-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="pres-status completed-tag">Completed</div>
+                    <h3>Proposal Presentation</h3>
+                    <p>Research problem, the proposed integrated solution, and each member&rsquo;s component objectives, tools and evaluation plan.</p>
+                    <a href="docs/presentations/R26-IT-126_Proposal_Presentation.pdf" class="pres-link" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> View Slides</a>
+                </div>
+                <div class="pres-card">
+                    <div class="pres-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="pres-status completed-tag">Completed</div>
+                    <h3>Progress Presentation 1</h3>
+                    <p>Proposal feedback and the improvements made, progress of all four components (including the revised mobile component) and the commercialization plan.</p>
+                    <a href="docs/presentations/R26-IT-126_Progress_Presentation_1.pdf" class="pres-link" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> View Slides</a>
+                </div>
+                <div class="pres-card">
+                    <div class="pres-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="pres-status completed-tag">Completed</div>
+                    <h3>Progress Presentation 2</h3>
+                    <p>Feedback from Progress Presentation 1 and the solutions applied, the integrated system overview and a working system demonstration.</p>
+                    <a href="docs/presentations/R26-IT-126_Progress_Presentation_2.pdf" class="pres-link" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> View Slides</a>
+                </div>
+                <div class="pres-card">
+                    <div class="pres-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="pres-status upcoming-tag">Upcoming</div>
+                    <h3>Final Presentation</h3>
+                    <p>Complete system demonstration, research findings, contributions, and thesis defense.</p>
+                    <a href="#" class="pres-link disabled"><i class="fas fa-clock"></i> Coming Soon</a>
+                </div>
+            </div>
+            <div class="pres-video">
+                <i class="fas fa-video"></i>
+                <div class="pres-video-info">
+                    <h4>System Demonstration Video</h4>
+                    <p>Recorded demonstration of the integrated system, shown at the progress presentations.</p>
+                </div>
+                <a href="#" class="pres-link disabled"><i class="fas fa-clock"></i> Link Coming Soon</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT US ==================== -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-users"></i> Team</span>
+                <h2 class="section-title">About Us</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Meet the researchers behind the Smart Waste Management System.</p>
+            </div>
+
+            <!-- Supervisors -->
+            <div class="supervisors">
+                <h3 class="sub-heading">Supervisors</h3>
+                <div class="supervisor-grid">
+                    <div class="supervisor-card">
+                        <img src="images/team/uditha.jpg" alt="Mr. Uditha Dharmakeerthi" class="supervisor-photo" loading="lazy">
+                        <h4>Mr. Uditha Dharmakeerthi</h4>
+                        <span class="supervisor-role">Supervisor</span>
+                        <p class="supervisor-position"><strong>Academic Fellow</strong><br>Department of Computer Systems Engineering<br>Faculty of Computing, SLIIT</p>
+                        <ul class="supervisor-quals">
+                            <li>MBA &ndash; London Metropolitan University, UK</li>
+                            <li>BSc in Management &amp; Information Technology &ndash; University of Kelaniya</li>
+                            <li>CCNA &amp; Certified Ethical Hacker (CEH)</li>
+                        </ul>
+                        <div class="supervisor-interests"><span>Internet of Things</span><span>Networking</span><span>Information Security</span><span>Cloud Computing &amp; SDN</span><span>Wireless Communications</span></div>
+                        <div class="supervisor-links">
+                            <a href="mailto:uditha.d@sliit.lk" class="team-email"><i class="fas fa-envelope"></i> uditha.d@sliit.lk</a>
+                            <a href="https://www.sliit.lk/academic/academic-staff/uditha.d" class="team-email" target="_blank" rel="noopener"><i class="fas fa-id-badge"></i> SLIIT profile</a>
+                        </div>
+                    </div>
+                    <div class="supervisor-card">
+                        <img src="images/team/kanishka.jpg" alt="Mr. Kanishka Prajeewa Yapa" class="supervisor-photo" loading="lazy">
+                        <h4>Mr. Kanishka Prajeewa Yapa</h4>
+                        <span class="supervisor-role">Co-Supervisor</span>
+                        <p class="supervisor-position"><strong>Lecturer</strong><br>Department of Computer Systems Engineering<br>Faculty of Computing, SLIIT</p>
+                        <ul class="supervisor-quals">
+                            <li>MSc in Computer Science &ndash; University of Kelaniya</li>
+                            <li>BSc &ndash; University of Colombo</li>
+                            <li>Member of (ISC)&sup2;, ISACA &amp; EC-Council</li>
+                        </ul>
+                        <div class="supervisor-interests"><span>Cyber Security</span><span>Threat Modeling</span><span>Machine Learning</span><span>Deep Learning</span><span>IoMT</span></div>
+                        <div class="supervisor-links">
+                            <a href="mailto:kanishka.y@sliit.lk" class="team-email"><i class="fas fa-envelope"></i> kanishka.y@sliit.lk</a>
+                            <a href="https://www.sliit.lk/academic/academic-staff/kanishka.y" class="team-email" target="_blank" rel="noopener"><i class="fas fa-id-badge"></i> SLIIT profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Members -->
+            <h3 class="sub-heading">Research Team</h3>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="images/team/IT22548528.jpg" alt="Hemsara K.D.S." class="team-photo" loading="lazy">
+                    </div>
+                    <h4>Hemsara K.D.S.</h4>
+                    <span class="team-id">IT22548528</span>
+                    <p class="team-component">IoT-Based Environmental Sensing Smart Bin</p>
+                    <a href="mailto:it22548528@my.sliit.lk" class="team-email"><i class="fas fa-envelope"></i> it22548528@my.sliit.lk</a>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="images/team/IT22202772.jpg" alt="Gamaariya C.C." class="team-photo" loading="lazy">
+                    </div>
+                    <h4>Gamaariya C.C.</h4>
+                    <span class="team-id">IT22202772</span>
+                    <p class="team-component">Smart Fill-Level & Occupancy Monitoring</p>
+                    <a href="mailto:it22202772@my.sliit.lk" class="team-email"><i class="fas fa-envelope"></i> it22202772@my.sliit.lk</a>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="images/team/IT22213358.jpg" alt="Jayawardhane K.G.M.S." class="team-photo" loading="lazy">
+                    </div>
+                    <h4>Jayawardhane K.G.M.S.</h4>
+                    <span class="team-leader"><i class="fas fa-star"></i> Group Leader</span>
+                    <span class="team-id">IT22213358</span>
+                    <p class="team-component">ML-Based Waste Prediction & Revenue Hub</p>
+                    <a href="mailto:it22213358@my.sliit.lk" class="team-email"><i class="fas fa-envelope"></i> it22213358@my.sliit.lk</a>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="images/team/IT22088482.jpg" alt="Wijesiri A.M." class="team-photo" loading="lazy">
+                    </div>
+                    <h4>Wijesiri A.M.</h4>
+                    <span class="team-id">IT22088482</span>
+                    <p class="team-component">Mobile App for Real-Time Bin Detection, Adaptive Route Optimization &amp; Resident-Driven Coordination</p>
+                    <a href="mailto:it22088482@my.sliit.lk" class="team-email"><i class="fas fa-envelope"></i> it22088482@my.sliit.lk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT US ==================== -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-envelope"></i> Reach Out</span>
+                <h2 class="section-title">Contact Us</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h4>Institution</h4>
+                            <p>Sri Lanka Institute of Information Technology (SLIIT)<br>Faculty of Computing</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>SLIIT Malabe Campus,<br>New Kandy Road, Malabe,<br>Sri Lanka</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:it22213358@my.sliit.lk">it22213358@my.sliit.lk</a><br>Jayawardhane K.G.M.S. (Group Leader)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+94117544801">+94 11 754 4801</a><br>SLIIT (main line)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form" data-email="it22213358@my.sliit.lk">
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="Your Name" required>
+                            <label for="contact-name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="Your Email" required>
+                            <label for="contact-email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contact-subject" placeholder="Subject" required>
+                            <label for="contact-subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
+                            <label for="contact-message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <p class="form-note"><i class="fas fa-info-circle"></i> Clicking "Send Message" opens your email app with this message ready to send to our team.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-recycle"></i>
+                        <span>SmartWaste R26-IT-126</span>
+                    </div>
+                    <p>An IoT-driven Smart Waste Management System developed as a research project at the Sri Lanka Institute of Information Technology.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#literature-review">Literature Review</a></li>
+                        <li><a href="#methodology">Methodology</a></li>
+                        <li><a href="#results">Results &amp; Findings</a></li>
+                        <li><a href="#field-visit">Field Visit</a></li>
+                        <li><a href="#milestones">Milestones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#documents">Documents</a></li>
+                        <li><a href="#presentations">Presentations</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Smart Waste Management System | Group R26-IT-126 | SLIIT</p>
+                <p class="footer-updated"><i class="fas fa-sync-alt"></i> Last updated: <time datetime="2026-10-10">10 October 2026</time></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
