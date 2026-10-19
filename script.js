@@ -206,8 +206,10 @@ document.querySelectorAll('.doc-item').forEach(item => {
 // ==================== SMOOTH SCROLL ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
         const href = this.getAttribute('href');
+        // Only in-page links; a link whose href was changed later (e.g. to mailto:) works normally
+        if (!href.startsWith('#')) return;
+        e.preventDefault();
         if (href === '#') return; // placeholder link, nothing to scroll to
         const target = document.querySelector(href);
         if (target) {
