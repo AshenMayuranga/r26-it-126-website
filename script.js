@@ -235,15 +235,21 @@ if (contactForm) {
         const subject = document.getElementById('contact-subject').value.trim();
         const message = document.getElementById('contact-message').value.trim();
 
+        // The chosen topic decides which team member the e-mail goes to
+        const topic = document.getElementById('contact-topic');
+        const option = topic ? topic.options[topic.selectedIndex] : null;
+        const to = (option && option.dataset.email) || this.dataset.email;
+
         // General e-mail template sent to the research team
         const body =
             'Dear R26-IT-126 Research Team,\n\n' +
+            (option ? 'Topic: ' + option.text + '\n\n' : '') +
             message + '\n\n' +
             'Regards,\n' +
             name + '\n' +
             email;
 
-        window.location.href = 'mailto:' + this.dataset.email +
+        window.location.href = 'mailto:' + to +
             '?subject=' + encodeURIComponent('[R26-IT-126] ' + subject) +
             '&body=' + encodeURIComponent(body);
 
@@ -254,6 +260,50 @@ if (contactForm) {
         setTimeout(() => {
             btn.innerHTML = originalText;
         }, 3000);
+    });
+}
+
+// ==================== EMAIL TEMPLATE ====================
+// The first two lines of the template are "To:" and "Subject:", the rest is the body.
+const emailTemplate = document.getElementById('email-template');
+
+if (emailTemplate) {
+    const lines = emailTemplate.textContent.split('\n');
+    const templateTo = lines[0].replace(/^To:\s*/, '');
+    const templateSubject = lines[1].replace(/^Subject:\s*/, '');
+    const templateBody = lines.slice(2).join('\n').trim();
+
+    document.getElementById('open-template').href = 'mailto:' + templateTo +
+        '?subject=' + encodeURIComponent(templateSubject) +
+        '&body=' + encodeURIComponent(templateBody);
+
+    const copyBtn = document.getElementById('copy-template');
+    const copyLabel = copyBtn.innerHTML;
+
+    function copiedFeedback(ok) {
+        copyBtn.innerHTML = ok
+            ? '<i class="fas fa-check"></i> Copied'
+            : '<i class="fas fa-times"></i> Copy failed';
+        setTimeout(() => { copyBtn.innerHTML = copyLabel; }, 2000);
+    }
+
+    copyBtn.addEventListener('click', () => {
+        const text = emailTemplate.textContent;
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(() => copiedFeedback(true), () => copiedFeedback(false));
+            return;
+        }
+        // Fallback for browsers without the Clipboard API
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+        area.remove();
+        copiedFeedback(ok);
     });
 }
 

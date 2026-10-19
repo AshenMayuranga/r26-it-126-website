@@ -1253,9 +1253,30 @@
                 <span class="section-tag"><i class="fas fa-envelope"></i> Reach Out</span>
                 <h2 class="section-title">Contact Us</h2>
                 <div class="section-divider"></div>
+                <p class="section-desc">Have a question about our research or one of the components? Get in touch with the team.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <ul class="contact-emails">
+                                <li><a href="mailto:it22213358@my.sliit.lk">it22213358@my.sliit.lk</a><span>Jayawardhane K.G.M.S. &middot; Group Leader &middot; ML-Based Waste Prediction</span></li>
+                                <li><a href="mailto:it22548528@my.sliit.lk">it22548528@my.sliit.lk</a><span>Hemsara K.D.S. &middot; Environmental Sensing Smart Bin</span></li>
+                                <li><a href="mailto:it22202772@my.sliit.lk">it22202772@my.sliit.lk</a><span>Gamaariya C.C. &middot; Smart Fill-Level &amp; Occupancy Monitoring</span></li>
+                                <li><a href="mailto:it22088482@my.sliit.lk">it22088482@my.sliit.lk</a><span>Wijesiri A.M. &middot; Mobile App &amp; Route Optimization</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p><a href="tel:+94712765127">+94 71 276 5127</a><br>Research team (mobile)</p>
+                            <p class="contact-alt"><a href="tel:+94117544801">+94 11 754 4801</a><br>SLIIT (main line)</p>
+                        </div>
+                    </div>
                     <div class="contact-item">
                         <i class="fas fa-university"></i>
                         <div>
@@ -1266,26 +1287,14 @@
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Address</h4>
-                            <p>SLIIT Malabe Campus,<br>New Kandy Road, Malabe,<br>Sri Lanka</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:it22213358@my.sliit.lk">it22213358@my.sliit.lk</a><br>Jayawardhane K.G.M.S. (Group Leader)</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+94117544801">+94 11 754 4801</a><br>SLIIT (main line)</p>
+                            <h4>Visit Us</h4>
+                            <p>SLIIT Malabe Campus,<br>New Kandy Road, Malabe 10115,<br>Sri Lanka</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
+                    <h3 class="contact-card-title">Send a Message</h3>
+                    <p class="contact-card-desc">Choose a topic and your message is addressed to the right team member.</p>
                     <form class="contact-form" id="contact-form" data-email="it22213358@my.sliit.lk">
                         <div class="form-group">
                             <input type="text" id="contact-name" placeholder="Your Name" required>
@@ -1294,6 +1303,16 @@
                         <div class="form-group">
                             <input type="email" id="contact-email" placeholder="Your Email" required>
                             <label for="contact-email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <select id="contact-topic" aria-label="Topic">
+                                <option data-email="it22213358@my.sliit.lk">General enquiry</option>
+                                <option data-email="it22548528@my.sliit.lk">Component 1: Environmental Sensing Smart Bin</option>
+                                <option data-email="it22202772@my.sliit.lk">Component 2: Smart Fill-Level &amp; Occupancy Monitoring</option>
+                                <option data-email="it22213358@my.sliit.lk">Component 3: ML-Based Waste Prediction &amp; Revenue Hub</option>
+                                <option data-email="it22088482@my.sliit.lk">Component 4: Mobile App &amp; Route Optimization</option>
+                            </select>
+                            <label for="contact-topic">Topic</label>
                         </div>
                         <div class="form-group">
                             <input type="text" id="contact-subject" placeholder="Subject" required>
@@ -1308,6 +1327,45 @@
                         </button>
                         <p class="form-note"><i class="fas fa-info-circle"></i> Clicking "Send Message" opens your email app with this message ready to send to our team.</p>
                     </form>
+                </div>
+            </div>
+
+            <div class="contact-extra">
+                <div class="contact-card">
+                    <h3 class="contact-card-title">General Email Template</h3>
+                    <p class="contact-card-desc">You can also copy this template and send it from any email account.</p>
+<pre class="email-template" id="email-template">To: it22213358@my.sliit.lk
+Subject: [R26-IT-126] Enquiry about the Smart Waste Management System
+
+Dear R26-IT-126 Research Team,
+
+My name is [your name] and I am [your role or organisation].
+
+I am contacting you regarding [component or topic]. [Your question or message]
+
+I can be reached at [your email or phone number].
+
+Thank you.
+
+Kind regards,
+[your name]</pre>
+                    <div class="template-actions">
+                        <button type="button" class="btn btn-outline" id="copy-template"><i class="fas fa-copy"></i> Copy Template</button>
+                        <a href="#" class="btn btn-primary" id="open-template"><i class="fas fa-envelope-open-text"></i> Open in Email App</a>
+                    </div>
+                    <a href="https://github.com/MinuraJaySL/R26-IT-126" class="repo-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                        <span><strong>View the source code</strong>github.com/MinuraJaySL/<wbr>R26-IT-126</span>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <h3 class="contact-card-title">Find Us</h3>
+                    <p class="contact-card-desc">SLIIT Malabe Campus, New Kandy Road, Malabe.</p>
+                    <div class="contact-map">
+                        <iframe src="https://maps.google.com/maps?q=SLIIT%20Malabe%20Campus&amp;z=15&amp;output=embed" title="Map of SLIIT Malabe Campus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=SLIIT+Malabe+Campus" class="map-link" target="_blank" rel="noopener"><i class="fas fa-diamond-turn-right"></i> Get directions</a>
                 </div>
             </div>
         </div>
@@ -1342,6 +1400,7 @@
                         <li><a href="#presentations">Presentations</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="https://github.com/MinuraJaySL/R26-IT-126" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source Code</a></li>
                     </ul>
                 </div>
             </div>
