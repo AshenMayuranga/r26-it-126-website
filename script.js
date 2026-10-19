@@ -322,7 +322,7 @@ const SEARCH_ITEMS = [
     '.objective-card', '.method-step', '.tech-item', '.arch-node',
     '.milestone-item', '.doc-item', '.pres-card', '.pres-video',
     '.supervisor-card', '.team-card', '.contact-item',
-    '.visit-facts li', '.visit-feedback', '.visit-thumb'
+    '.visit-facts li', '.visit-feedback', '.visit-thumb', '.acknowledgements'
 ].join(', ');
 
 function cleanText(el) {

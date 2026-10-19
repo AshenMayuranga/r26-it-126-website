@@ -3317,3 +3317,54 @@ summary:focus-visible,
     font-size: 13px;
     color: #9ca3af;
 }
+
+/* ==================== ACKNOWLEDGEMENTS (About Us) ==================== */
+.acknowledgements {
+    display: flex;
+    gap: 22px;
+    max-width: 900px;
+    margin: 56px auto 0;
+    padding: 28px 32px;
+    background: rgba(15, 168, 108, 0.06);
+    border: 1px solid rgba(15, 168, 108, 0.15);
+    border-left: 4px solid var(--primary-500);
+    border-radius: var(--radius-lg);
+}
+
+.acknowledgements > i {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: var(--radius-md);
+    background: rgba(15, 168, 108, 0.12);
+    color: var(--primary-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.acknowledgements h3 {
+    font-family: var(--font-display);
+    font-size: 19px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.acknowledgements p {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.acknowledgements strong {
+    color: var(--text-primary);
+}
+
+@media (max-width: 576px) {
+    .acknowledgements {
+        flex-direction: column;
+        gap: 14px;
+        padding: 22px;
+    }
+}
