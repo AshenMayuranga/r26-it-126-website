@@ -270,7 +270,7 @@ const SEARCH_ITEMS = [
     '.objective-card', '.method-step', '.tech-item', '.arch-node',
     '.milestone-item', '.doc-item', '.pres-card', '.pres-video',
     '.supervisor-card', '.team-card', '.contact-item',
-    '.visit-facts li', '.visit-feedback', '.visit-thumb', '.screen-shot'
+    '.visit-facts li', '.visit-feedback', '.visit-thumb'
 ].join(', ');
 
 function cleanText(el) {
@@ -460,16 +460,14 @@ if (searchOverlay) {
     });
 }
 
-// ==================== PHOTO VIEWER (field visit & screenshots) ====================
-// Each [data-gallery] container is its own set: prev/next stay inside it.
+// ==================== FIELD VISIT PHOTO VIEWER ====================
 const lightbox = document.getElementById('lightbox');
-const photoLinks = [...document.querySelectorAll('.visit-photo-link')];
-let galleryPhotos = [];
+const visitPhotos = [...document.querySelectorAll('.visit-photo-link')];
 let lightboxIndex = 0;
 
 function showPhoto(i) {
-    lightboxIndex = (i + galleryPhotos.length) % galleryPhotos.length;
-    const link = galleryPhotos[lightboxIndex];
+    lightboxIndex = (i + visitPhotos.length) % visitPhotos.length;
+    const link = visitPhotos[lightboxIndex];
     const img = document.getElementById('lightbox-img');
     img.src = link.getAttribute('href');
     img.alt = link.dataset.caption;
@@ -481,13 +479,11 @@ function closeLightbox() {
     document.body.classList.remove('search-open');
 }
 
-if (lightbox && photoLinks.length) {
-    photoLinks.forEach(link => {
+if (lightbox && visitPhotos.length) {
+    visitPhotos.forEach((link, i) => {
         link.addEventListener('click', e => {
             e.preventDefault();
-            const gallery = link.closest('[data-gallery]');
-            galleryPhotos = gallery ? [...gallery.querySelectorAll('.visit-photo-link')] : [link];
-            showPhoto(galleryPhotos.indexOf(link));
+            showPhoto(i);
             lightbox.hidden = false;
             document.body.classList.add('search-open'); // stop page scrolling
         });
