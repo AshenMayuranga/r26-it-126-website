@@ -3015,3 +3015,93 @@ summary:focus-visible,
         grid-template-columns: 1fr;
     }
 }
+
+/* ==================== HERO PHOTO ====================
+   Smart-bin street photo behind the hero with a dark green tint, so the
+   hero text and the navbar (until the page is scrolled) turn white. */
+.hero {
+    background: #062419 url('images/hero/hero-bg.jpg') center / cover no-repeat;
+}
+
+.hero-gradient {
+    background:
+        radial-gradient(ellipse 900px 520px at 50% 50%, rgba(3, 26, 17, 0.45), transparent 75%),
+        linear-gradient(180deg, rgba(3, 30, 20, 0.80) 0%, rgba(4, 40, 26, 0.66) 45%, rgba(3, 26, 17, 0.88) 100%);
+}
+
+.hero-title {
+    color: #ffffff;
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-badge {
+    background: rgba(15, 168, 108, 0.22);
+    border-color: rgba(77, 202, 154, 0.45);
+    color: #80d9b7;
+}
+
+.hero .stat-number {
+    color: #4dca9a;
+}
+
+.hero .stat-label {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.hero .btn-outline {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.hero .scroll-indicator {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.hero .mouse {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar:not(.scrolled) .logo-title {
+    color: #ffffff;
+}
+
+.navbar:not(.scrolled) .logo-sub {
+    color: #80d9b7;
+}
+
+.navbar:not(.scrolled) .nav-search-btn {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar:not(.scrolled) .nav-toggle:not(.active) span {
+    background: #ffffff;
+}
+
+@media (min-width: 1101px) {
+    .navbar:not(.scrolled) .nav-link {
+        color: rgba(255, 255, 255, 0.88);
+    }
+
+    .navbar:not(.scrolled) .nav-link:hover,
+    .navbar:not(.scrolled) .nav-link.active {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.14);
+    }
+}
+
+/* The scroll hint overlaps the hero buttons on phones */
+@media (max-width: 600px) {
+    .hero .scroll-indicator {
+        display: none;
+    }
+}
