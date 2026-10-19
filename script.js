@@ -539,6 +539,27 @@ if (heroTitle) {
     heroTitle.style.opacity = '1';
 }
 
+// ==================== LAST UPDATED (from latest GitHub commit) ====================
+// Shows the date and time of the most recent push. If GitHub can't be
+// reached, the date written in index.html stays as the fallback.
+const lastUpdated = document.getElementById('last-updated');
+if (lastUpdated) {
+    fetch('https://api.github.com/repos/AshenMayuranga/r26-it-126-website/commits?per_page=1')
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(commits => {
+            const date = new Date(commits[0].commit.committer.date);
+            const day = date.toLocaleDateString('en-GB', {
+                day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Colombo'
+            });
+            const time = date.toLocaleTimeString('en-US', {
+                hour: 'numeric', minute: '2-digit', timeZone: 'Asia/Colombo'
+            });
+            lastUpdated.dateTime = date.toISOString();
+            lastUpdated.textContent = `${day}, ${time}`;
+        })
+        .catch(() => {});
+}
+
 // ==================== NAVBAR LINK CLICK FEEDBACK ====================
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function() {
