@@ -27,6 +27,6 @@ Static website built with HTML, CSS and JavaScript only (no server or database),
 index.html      page content
 style.css       styles
 script.js       navigation, search, photo viewer, contact form
-docs/           proposals, theses, checklists, presentation slides (PDF)
+docs/           proposals, theses, checklists, presentation slides (PDF), demo video
 images/         team and field-visit photos
 ```
