@@ -84,6 +84,7 @@
                     <a href="#results" class="nav-link dropdown-toggle">Results <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="#results">Results &amp; Findings</a></li>
+                        <li><a href="#screenshots">System Screenshots</a></li>
                         <li><a href="#field-visit">Field Visit &amp; Feedback</a></li>
                     </ul>
                 </li>
@@ -712,11 +713,72 @@
                 <i class="fas fa-project-diagram"></i>
                 <p><strong>Integration:</strong> The four components were integrated through Firebase. Live bin status from the IoT components was read by the mobile application, and archived sensor data was available to the ML component for time-series processing.</p>
             </div>
+
+            <!-- ==================== SYSTEM SCREENSHOTS ==================== -->
+            <div class="screens" id="screenshots" data-gallery>
+                <h3 class="screens-title"><i class="fas fa-images"></i> System Screenshots</h3>
+                <p class="screens-desc">Screens from the working system, taken from the individual theses. Click an image to enlarge it.</p>
+
+                <h4 class="screens-group">Mobile App <span>Wijesiri A.M. (IT22088482)</span></h4>
+                <div class="screens-phones">
+                    <figure class="screen-shot screen-phone">
+                        <a href="images/screenshots/app-pickup-request.jpg" class="visit-photo-link" data-caption="Resident places a pickup request on the map">
+                            <img src="images/screenshots/app-pickup-request.jpg" alt="Resident places a pickup request on the map" loading="lazy">
+                        </a>
+                        <figcaption>Resident places a pickup request on the map</figcaption>
+                    </figure>
+                    <figure class="screen-shot screen-phone">
+                        <a href="images/screenshots/app-truck-arrived.jpg" class="visit-photo-link" data-caption="&ldquo;Truck is Here!&rdquo; arrival notification">
+                            <img src="images/screenshots/app-truck-arrived.jpg" alt="&ldquo;Truck is Here!&rdquo; arrival notification" loading="lazy">
+                        </a>
+                        <figcaption>&ldquo;Truck is Here!&rdquo; arrival notification</figcaption>
+                    </figure>
+                    <figure class="screen-shot screen-phone">
+                        <a href="images/screenshots/app-driver-dashboard.jpg" class="visit-photo-link" data-caption="Driver dashboard">
+                            <img src="images/screenshots/app-driver-dashboard.jpg" alt="Driver dashboard" loading="lazy">
+                        </a>
+                        <figcaption>Driver dashboard</figcaption>
+                    </figure>
+                    <figure class="screen-shot screen-phone">
+                        <a href="images/screenshots/app-bin-priority-map.jpg" class="visit-photo-link" data-caption="Bin priority map with a critical bin and the driver">
+                            <img src="images/screenshots/app-bin-priority-map.jpg" alt="Bin priority map with a critical bin and the driver" loading="lazy">
+                        </a>
+                        <figcaption>Bin priority map with a critical bin and the driver</figcaption>
+                    </figure>
+                    <figure class="screen-shot screen-phone">
+                        <a href="images/screenshots/app-my-pickups.jpg" class="visit-photo-link" data-caption="Resident pickup history">
+                            <img src="images/screenshots/app-my-pickups.jpg" alt="Resident pickup history" loading="lazy">
+                        </a>
+                        <figcaption>Resident pickup history</figcaption>
+                    </figure>
+                </div>
+
+                <div class="screens-wide">
+                    <div>
+                        <h4 class="screens-group">Fill-Level &amp; Occupancy Monitoring <span>Gamaariya C.C. (IT22202772)</span></h4>
+                        <figure class="screen-shot screen-web">
+                            <a href="images/screenshots/web-fill-level.jpg" class="visit-photo-link" data-caption="Web page showing live fill-level and lid status for each bin">
+                                <img src="images/screenshots/web-fill-level.jpg" alt="Web page showing live fill-level and lid status for each bin" loading="lazy">
+                            </a>
+                            <figcaption>Web page showing live fill-level and lid status for each bin</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <h4 class="screens-group">ML-Based Waste Prediction <span>Jayawardhane K.G.M.S. (IT22213358)</span></h4>
+                        <figure class="screen-shot screen-web">
+                            <a href="images/screenshots/ml-accuracy-chart.png" class="visit-photo-link" data-caption="Prediction accuracy by zone for wet and dry waste (test set)">
+                                <img src="images/screenshots/ml-accuracy-chart.png" alt="Prediction accuracy by zone for wet and dry waste (test set)" loading="lazy">
+                            </a>
+                            <figcaption>Prediction accuracy by zone for wet and dry waste (test set)</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ==================== FIELD VISIT ==================== -->
-    <section class="section" id="field-visit">
+    <section class="section" id="field-visit" data-gallery>
         <div class="container">
             <div class="section-header">
                 <span class="section-tag"><i class="fas fa-handshake"></i> Stakeholder Engagement</span>
@@ -790,7 +852,7 @@
         </div>
     </section>
 
-    <!-- Photo viewer for the field-visit gallery -->
+    <!-- Photo viewer for the field-visit and screenshot galleries -->
     <div class="lightbox" id="lightbox" hidden>
         <button class="lightbox-close" id="lightbox-close" aria-label="Close photo"><i class="fas fa-times"></i></button>
         <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo"><i class="fas fa-chevron-left"></i></button>
