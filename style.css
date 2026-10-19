@@ -967,10 +967,13 @@ img { max-width: 100%; height: auto; }
     gap: 10px;
 }
 
+/* Logo or icon on the left, name and description on the right */
 .tech-item {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 16px;
+    display: grid;
+    grid-template-columns: 28px auto;
+    column-gap: 12px;
+    align-items: center;
+    padding: 10px 16px 10px 12px;
     background: rgba(15, 168, 108, 0.05);
     border: 1px solid rgba(15, 168, 108, 0.1);
     border-radius: var(--radius-sm);
@@ -980,6 +983,23 @@ img { max-width: 100%; height: auto; }
 .tech-item:hover {
     background: rgba(15, 168, 108, 0.1);
     border-color: rgba(15, 168, 108, 0.2);
+}
+
+.tech-icon {
+    grid-row: span 2;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+i.tech-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background: rgba(15, 168, 108, 0.12);
+    color: var(--primary-400);
+    font-size: 14px;
 }
 
 .tech-name {
@@ -3103,5 +3123,12 @@ summary:focus-visible,
 @media (max-width: 600px) {
     .hero .scroll-indicator {
         display: none;
+    }
+}
+
+/* Technology items stack one per row on phones, so give them equal width */
+@media (max-width: 576px) {
+    .tech-item {
+        flex: 1 1 100%;
     }
 }
