@@ -11,7 +11,7 @@ An IoT and machine-learning framework for municipal solid waste management, made
 |---|---|
 | IoT-Based Environmental Sensing Smart Bin | Hemsara K.D.S. (IT22548528) |
 | Smart Fill-Level & Occupancy Monitoring | Gamaariya C.C. (IT22202772) |
-| ML-Based Waste Prediction & Revenue Hub | Jayawardhane K.G.M.S. (IT22213358) — Group Leader |
+| ML-Based Waste Prediction & Revenue Hub | Jayawardhane K.G.M.S. (IT22213358) |
 | Mobile App for Real-Time Bin Detection, Adaptive Route Optimization & Resident-Driven Coordination | Wijesiri A.M. (IT22088482) |
 
 **Supervisor:** Mr. Uditha Dharmakeerthi  

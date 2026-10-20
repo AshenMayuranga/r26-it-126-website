@@ -2979,21 +2979,6 @@ body.search-open {
     .lightbox-next { right: calc(50% - 56px); }
 }
 
-/* Group leader badge on the team card */
-.team-leader {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 6px;
-    padding: 2px 10px;
-    border-radius: var(--radius-full);
-    background: rgba(245, 166, 35, 0.12);
-    border: 1px solid rgba(245, 166, 35, 0.35);
-    color: var(--accent-400);
-    font-size: 11px;
-    font-weight: 600;
-}
-
 /* ==================== ACCESSIBILITY ==================== */
 /* "Skip to main content" — hidden until reached with the Tab key */
 .skip-link {
