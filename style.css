@@ -274,6 +274,15 @@ img { max-width: 100%; height: auto; }
     padding-left: 22px;
 }
 
+/* Milestone dates shown under each name */
+.dropdown-menu li a small {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
 /* Mobile toggle */
 .nav-toggle {
     display: none;
@@ -1294,6 +1303,32 @@ i.tech-icon {
 .milestone-note i {
     color: var(--info);
     margin-top: 3px;
+}
+
+.milestone-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.milestone-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--primary-400);
+    background: rgba(15, 168, 108, 0.08);
+    border: 1px solid rgba(15, 168, 108, 0.2);
+    border-radius: var(--radius-full);
+    transition: var(--transition-base);
+}
+
+.milestone-links a:hover {
+    background: rgba(15, 168, 108, 0.16);
+    border-color: var(--primary-500);
 }
 
 .milestone-marks-row {

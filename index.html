@@ -73,11 +73,13 @@
                 <li class="nav-dropdown">
                     <a href="#milestones" class="nav-link dropdown-toggle">Milestones <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#ms-proposal">Project Proposal</a></li>
-                        <li><a href="#ms-pp1">Progress Presentation 1</a></li>
-                        <li><a href="#ms-pp2">Progress Presentation 2</a></li>
-                        <li><a href="#ms-final">Final Assessment</a></li>
-                        <li><a href="#ms-viva">Viva Voce</a></li>
+                        <li><a href="#ms-proposal">Project Proposal<small>17 March 2026</small></a></li>
+                        <li><a href="#ms-pp1">Progress Presentation 1<small>12 May 2026</small></a></li>
+                        <li><a href="#ms-pp2">Progress Presentation 2<small>1 September 2026</small></a></li>
+                        <li><a href="#ms-submission">Draft Thesis, Website &amp; Checklist<small>11 October 2026</small></a></li>
+                        <li><a href="#ms-final">Final Presentation &amp; Viva<small>21 October 2026</small></a></li>
+                        <li><a href="#ms-paper">Research Paper<small>23 October 2026</small></a></li>
+                        <li><a href="#ms-thesis">Final Thesis Submission<small>28 October 2026</small></a></li>
                     </ul>
                 </li>
                 <li class="nav-dropdown">
@@ -830,14 +832,15 @@
                 <span class="section-tag"><i class="fas fa-flag-checkered"></i> Timeline</span>
                 <h2 class="section-title">Milestones</h2>
                 <div class="section-divider"></div>
-                <p class="section-desc">All assessments of the research project with their dates and marks. Select a milestone to view its details.</p>
+                <p class="section-desc">All assessments of the research project with their official dates, marks and what was presented at each stage. Select a milestone to view its details.</p>
             </div>
             <div class="milestone-timeline">
-                <details class="milestone-item completed" id="ms-proposal">
+                <!-- Status (Completed / Up Next / Upcoming) is set by script.js from data-date -->
+                <details class="milestone-item completed" id="ms-proposal" data-date="2026-03-17">
                     <summary class="milestone-summary">
                         <span class="milestone-dot"></span>
                         <span class="milestone-head">
-                            <span class="milestone-date">February 2026</span>
+                            <span class="milestone-date">17 March 2026</span>
                             <span class="milestone-title">Project Proposal</span>
                         </span>
                         <span class="milestone-meta">
@@ -847,7 +850,7 @@
                         </span>
                     </summary>
                     <div class="milestone-body">
-                        <p>Initial project proposal presentation covering problem identification, literature survey, proposed methodology, and individual component definitions.</p>
+                        <p>The proposal presentation to the panel, covering the research problem, literature survey, research gap, objectives and planned methodology of each member&rsquo;s component and how it fits into the integrated Smart Waste Management System.</p>
                         <ul class="milestone-list">
                             <li>Proposal presentation (group)</li>
                             <li>Individual proposal reports (4)</li>
@@ -856,14 +859,18 @@
                             <i class="fas fa-info-circle"></i>
                             <span><strong>Component revision:</strong> Following panel feedback at the proposal presentation, the component of Wijesiri A.M. (IT22088482) was revised from <em>ML-Based Waste Level Prediction</em> to <em>Mobile Application for Real-Time Bin Detection, Adaptive Route Optimization, and Resident-Driven Coordination</em>. The revised component has been followed from Progress Presentation 1 onwards.</span>
                         </div>
+                        <div class="milestone-links">
+                            <a href="docs/presentations/R26-IT-126_Proposal_Presentation.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Slides</a>
+                            <a href="#doc-proposals"><i class="fas fa-file-signature"></i> Proposal reports</a>
+                        </div>
                         <div class="milestone-marks-row">Marks Allocated: <strong>6%</strong></div>
                     </div>
                 </details>
-                <details class="milestone-item completed" id="ms-pp1">
+                <details class="milestone-item completed" id="ms-pp1" data-date="2026-05-12">
                     <summary class="milestone-summary">
                         <span class="milestone-dot"></span>
                         <span class="milestone-head">
-                            <span class="milestone-date">May 2026</span>
+                            <span class="milestone-date">12 May 2026</span>
                             <span class="milestone-title">Progress Presentation 1</span>
                         </span>
                         <span class="milestone-meta">
@@ -873,19 +880,22 @@
                         </span>
                     </summary>
                     <div class="milestone-body">
-                        <p>First progress review demonstrating initial prototype development, data collection progress, and preliminary results for each individual component.</p>
+                        <p>The first progress review, presenting the proposal feedback and the improvements made, the progress of all four components (including the revised mobile component), the initial prototypes and the commercialization plan.</p>
                         <ul class="milestone-list">
                             <li>Progress presentation slides</li>
                             <li>Prototype demonstration</li>
                         </ul>
+                        <div class="milestone-links">
+                            <a href="docs/presentations/R26-IT-126_Progress_Presentation_1.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Slides</a>
+                        </div>
                         <div class="milestone-marks-row">Marks Allocated: <strong>15%</strong></div>
                     </div>
                 </details>
-                <details class="milestone-item completed" id="ms-pp2">
+                <details class="milestone-item completed" id="ms-pp2" data-date="2026-09-01">
                     <summary class="milestone-summary">
                         <span class="milestone-dot"></span>
                         <span class="milestone-head">
-                            <span class="milestone-date">September 2026</span>
+                            <span class="milestone-date">1 September 2026</span>
                             <span class="milestone-title">Progress Presentation 2</span>
                         </span>
                         <span class="milestone-meta">
@@ -895,54 +905,112 @@
                         </span>
                     </summary>
                     <div class="milestone-body">
-                        <p>Second progress review showcasing integrated system demonstration, evaluation results, and near-final implementation of all four components.</p>
+                        <p>The second progress review, presenting the feedback from Progress Presentation 1 and the solutions applied, the integrated system overview, evaluation results and a working demonstration of all four components together.</p>
                         <ul class="milestone-list">
                             <li>Progress presentation slides</li>
                             <li>Integrated system demonstration</li>
                         </ul>
+                        <div class="milestone-links">
+                            <a href="docs/presentations/R26-IT-126_Progress_Presentation_2.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Slides</a>
+                            <a href="docs/videos/R26-IT-126_System_Demo.mp4" target="_blank" rel="noopener"><i class="fas fa-play"></i> Demo video</a>
+                        </div>
                         <div class="milestone-marks-row">Marks Allocated: <strong>18%</strong></div>
                     </div>
                 </details>
-                <details class="milestone-item current" id="ms-final">
+                <details class="milestone-item completed" id="ms-submission" data-date="2026-10-11">
                     <summary class="milestone-summary">
                         <span class="milestone-dot"></span>
                         <span class="milestone-head">
-                            <span class="milestone-date">October 2026</span>
-                            <span class="milestone-title">Final Assessment</span>
+                            <span class="milestone-date">11 October 2026</span>
+                            <span class="milestone-title">Draft Thesis, Website &amp; Final Checklist</span>
                         </span>
                         <span class="milestone-meta">
-                            <span class="milestone-status">In Progress</span>
-                            <span class="milestone-marks">40%</span>
+                            <span class="milestone-status">Completed</span>
                             <i class="fas fa-chevron-down milestone-chevron"></i>
                         </span>
                     </summary>
                     <div class="milestone-body">
-                        <p>Final project assessment including thesis submission, complete system demonstration, and evaluation of the integrated Smart Waste Management System.</p>
+                        <p>Submission of the draft thesis of each member, the complete source code of this research website and the final checklist, all on 11 October.</p>
                         <ul class="milestone-list">
-                            <li>Individual theses (4)</li>
-                            <li>Final group report</li>
-                            <li>Final presentation and complete system demonstration</li>
-                            <li>Research website</li>
+                            <li>Draft individual theses (4)</li>
+                            <li>Research website submission</li>
+                            <li>Final checklist submission</li>
                         </ul>
-                        <div class="milestone-marks-row">Marks Allocated: <strong>40%</strong></div>
+                        <div class="milestone-links">
+                            <a href="#doc-theses"><i class="fas fa-book"></i> Theses</a>
+                            <a href="#doc-checklists"><i class="fas fa-clipboard-check"></i> Checklists</a>
+                        </div>
+                        <div class="milestone-marks-row">Marks: assessed as part of the <strong>Final Assessment</strong></div>
                     </div>
                 </details>
-                <details class="milestone-item upcoming" id="ms-viva">
+                <details class="milestone-item current" id="ms-final" data-date="2026-10-21">
                     <summary class="milestone-summary">
                         <span class="milestone-dot"></span>
                         <span class="milestone-head">
-                            <span class="milestone-date">November 2026</span>
-                            <span class="milestone-title">Viva Voce</span>
+                            <span class="milestone-date">21 October 2026</span>
+                            <span class="milestone-title">Final Presentation &amp; Viva</span>
+                        </span>
+                        <span class="milestone-meta">
+                            <span class="milestone-status">Up Next</span>
+                            <span class="milestone-marks">61%</span>
+                            <i class="fas fa-chevron-down milestone-chevron"></i>
+                        </span>
+                    </summary>
+                    <div class="milestone-body">
+                        <p>The final presentation and demonstration of the complete integrated Smart Waste Management System, followed by the individual viva of each member to defend their research work, methodology, results and contributions.</p>
+                        <ul class="milestone-list">
+                            <li>Final presentation and complete system demonstration</li>
+                            <li>Final group report</li>
+                            <li>Individual viva voce (4)</li>
+                        </ul>
+                        <div class="milestone-links">
+                            <a href="#presentations"><i class="fas fa-person-chalkboard"></i> Final slides</a>
+                            <a href="#doc-reports"><i class="fas fa-file-contract"></i> Final group report</a>
+                        </div>
+                        <div class="milestone-marks-row">Marks Allocated: <strong>40%</strong> Final Assessment + <strong>21%</strong> Viva</div>
+                    </div>
+                </details>
+                <details class="milestone-item upcoming" id="ms-paper" data-date="2026-10-23">
+                    <summary class="milestone-summary">
+                        <span class="milestone-dot"></span>
+                        <span class="milestone-head">
+                            <span class="milestone-date">23 October 2026</span>
+                            <span class="milestone-title">Research Paper</span>
                         </span>
                         <span class="milestone-meta">
                             <span class="milestone-status">Upcoming</span>
-                            <span class="milestone-marks">21%</span>
                             <i class="fas fa-chevron-down milestone-chevron"></i>
                         </span>
                     </summary>
                     <div class="milestone-body">
-                        <p>Final viva voce examination to defend the research work, methodology, results, and contributions of the individual thesis components.</p>
-                        <div class="milestone-marks-row">Marks Allocated: <strong>21%</strong></div>
+                        <p>Submission of the research paper written from the project, followed by the evidence of its publication by 1 December 2026.</p>
+                        <ul class="milestone-list">
+                            <li>Research paper submission (23 October 2026)</li>
+                            <li>Evidence of publication (by 1 December 2026)</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="milestone-item upcoming" id="ms-thesis" data-date="2026-10-28">
+                    <summary class="milestone-summary">
+                        <span class="milestone-dot"></span>
+                        <span class="milestone-head">
+                            <span class="milestone-date">28 October 2026</span>
+                            <span class="milestone-title">Final Thesis Submission</span>
+                        </span>
+                        <span class="milestone-meta">
+                            <span class="milestone-status">Upcoming</span>
+                            <i class="fas fa-chevron-down milestone-chevron"></i>
+                        </span>
+                    </summary>
+                    <div class="milestone-body">
+                        <p>Submission of the final individual thesis of each member, with the corrections from the final presentation and viva applied.</p>
+                        <ul class="milestone-list">
+                            <li>Final individual theses (4)</li>
+                        </ul>
+                        <div class="milestone-links">
+                            <a href="#doc-theses"><i class="fas fa-book"></i> Theses</a>
+                        </div>
+                        <div class="milestone-marks-row">Marks: assessed as part of the <strong>Final Assessment</strong></div>
                     </div>
                 </details>
             </div>
@@ -967,7 +1035,7 @@
                 (or "Pending" when data-status="pending").
             -->
             <div class="docs-grid">
-                <div class="doc-category">
+                <div class="doc-category" id="doc-proposals">
                     <div class="doc-category-header">
                         <i class="fas fa-file-signature"></i>
                         <h3>Project Proposal Reports</h3>
@@ -1008,7 +1076,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="doc-category">
+                <div class="doc-category" id="doc-theses">
                     <div class="doc-category-header">
                         <i class="fas fa-book"></i>
                         <h3>Individual Theses</h3>
@@ -1048,7 +1116,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="doc-category">
+                <div class="doc-category" id="doc-checklists">
                     <div class="doc-category-header">
                         <i class="fas fa-clipboard-check"></i>
                         <h3>Check List Documents</h3>
@@ -1072,7 +1140,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="doc-category">
+                <div class="doc-category" id="doc-reports">
                     <div class="doc-category-header">
                         <i class="fas fa-file-contract"></i>
                         <h3>Topic Assessment &amp; Final Report</h3>

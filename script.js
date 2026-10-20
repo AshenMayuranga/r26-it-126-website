@@ -118,6 +118,38 @@ if (heroSection) {
     heroObserver.observe(heroSection);
 }
 
+// ==================== MILESTONE STATUS ====================
+// Each milestone is Completed after its date, "Due Today" on its date,
+// "Up Next" for the first one still ahead, and Upcoming after that.
+function updateMilestoneStatus() {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    let nextFound = false;
+
+    document.querySelectorAll('.milestone-item[data-date]').forEach(item => {
+        const [y, m, d] = item.dataset.date.split('-').map(Number);
+        const due = new Date(y, m - 1, d);
+        const status = item.querySelector('.milestone-status');
+        let state, label;
+
+        if (due < today) {
+            state = 'completed'; label = 'Completed';
+        } else if (!nextFound) {
+            nextFound = true;
+            state = 'current';
+            label = due.getTime() === today.getTime() ? 'Due Today' : 'Up Next';
+        } else {
+            state = 'upcoming'; label = 'Upcoming';
+        }
+
+        item.classList.remove('completed', 'current', 'upcoming');
+        item.classList.add(state);
+        if (status) status.textContent = label;
+    });
+}
+
+updateMilestoneStatus();
+
 // ==================== SCROLL REVEAL ANIMATION ====================
 function addRevealClasses() {
     const revealElements = document.querySelectorAll(
