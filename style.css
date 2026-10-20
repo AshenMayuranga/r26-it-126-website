@@ -1247,14 +1247,6 @@ i.tech-icon {
     background: rgba(148, 163, 184, 0.1);
 }
 
-.milestone-marks {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--accent-400);
-    padding: 4px 12px;
-    background: rgba(245, 166, 35, 0.08);
-    border-radius: var(--radius-full);
-}
 
 .milestone-chevron {
     font-size: 12px;
@@ -1270,6 +1262,10 @@ i.tech-icon {
     padding: 0 24px 22px;
     border-top: 1px solid var(--border-color);
     padding-top: 18px;
+}
+
+.milestone-body > :last-child {
+    margin-bottom: 0;
 }
 
 .milestone-body p {
@@ -1331,14 +1327,7 @@ i.tech-icon {
     border-color: var(--primary-500);
 }
 
-.milestone-marks-row {
-    font-size: 13px;
-    color: var(--text-secondary);
-}
 
-.milestone-marks-row strong {
-    color: var(--accent-400);
-}
 
 /* Official Timeline table */
 .official-timeline {
