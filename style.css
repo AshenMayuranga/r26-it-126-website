@@ -1340,6 +1340,119 @@ i.tech-icon {
     color: var(--accent-400);
 }
 
+/* Official Timeline table */
+.official-timeline {
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 24px;
+    background: var(--gradient-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    scroll-margin-top: 100px;
+}
+
+.official-timeline-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.official-timeline-head > i {
+    font-size: 20px;
+    color: var(--primary-400);
+    padding: 12px;
+    background: rgba(15, 168, 108, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.official-timeline-head h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.official-timeline-head small {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.timeline-table th,
+.timeline-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-table th {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+.timeline-table td {
+    color: var(--text-secondary);
+}
+
+.timeline-table td:first-child {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.timeline-table td:nth-child(2) {
+    white-space: nowrap;
+}
+
+.timeline-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tl-status {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    color: var(--primary-400);
+    background: rgba(15, 168, 108, 0.1);
+}
+
+.tl-status.current {
+    color: var(--accent-400);
+    background: rgba(245, 166, 35, 0.1);
+}
+
+.tl-status.upcoming {
+    color: var(--text-muted);
+    background: rgba(148, 163, 184, 0.1);
+}
+
+@media (max-width: 576px) {
+    .official-timeline {
+        padding: 18px 14px;
+    }
+
+    .timeline-table th,
+    .timeline-table td {
+        padding: 10px 8px;
+    }
+}
+
 @media (max-width: 576px) {
     .milestone-summary {
         flex-direction: column;

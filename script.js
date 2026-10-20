@@ -119,36 +119,41 @@ if (heroSection) {
 }
 
 // ==================== MILESTONE STATUS ====================
-// Each milestone is Completed after its date, "Due Today" on its date,
-// "Up Next" for the first one still ahead, and Upcoming after that.
-function updateMilestoneStatus() {
+// Each milestone (and Official Timeline row) is Completed after its date,
+// "Due Today" on its date, "Up Next" for the next date still ahead, and
+// Upcoming after that. `stateEl` gets the state class, `status` the label.
+function updateMilestoneStatus(selector, getStateEl, statusSelector) {
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    let nextFound = false;
+    let nextDate = null;
 
-    document.querySelectorAll('.milestone-item[data-date]').forEach(item => {
+    document.querySelectorAll(selector).forEach(item => {
         const [y, m, d] = item.dataset.date.split('-').map(Number);
         const due = new Date(y, m - 1, d);
-        const status = item.querySelector('.milestone-status');
+        const stateEl = getStateEl(item);
+        const status = item.querySelector(statusSelector);
         let state, label;
 
         if (due < today) {
             state = 'completed'; label = 'Completed';
-        } else if (!nextFound) {
-            nextFound = true;
+        } else if (nextDate === null || due.getTime() === nextDate) {
+            nextDate = due.getTime();
             state = 'current';
             label = due.getTime() === today.getTime() ? 'Due Today' : 'Up Next';
         } else {
             state = 'upcoming'; label = 'Upcoming';
         }
 
-        item.classList.remove('completed', 'current', 'upcoming');
-        item.classList.add(state);
+        if (stateEl) {
+            stateEl.classList.remove('completed', 'current', 'upcoming');
+            stateEl.classList.add(state);
+        }
         if (status) status.textContent = label;
     });
 }
 
-updateMilestoneStatus();
+updateMilestoneStatus('.milestone-item[data-date]', item => item, '.milestone-status');
+updateMilestoneStatus('.timeline-table tr[data-date]', row => row.querySelector('.tl-status'), '.tl-status');
 
 // ==================== SCROLL REVEAL ANIMATION ====================
 function addRevealClasses() {
